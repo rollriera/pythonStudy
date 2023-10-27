@@ -177,10 +177,3 @@ url = url.replace("http://","")
 url = url[:url.index(".")]
 url = url[0:3]+str(len(url))+str(url.count("e"))+"!"
 print(url)
-
-#방법 2
-# format함수 이용 기호는 {}중괄호 사용
-print("나는 {}살입니다.".format(20))
-print("나는 {}색과 {}색을 좋아해요.".format("파란", "빨간"))
-print("나는 {0}색과 {1}색을 좋아해요.".format("파란", "빨간"))
-print("나는 {1}색과 {0}색을 좋아해요.".format("파란", "빨간")) #index값을 지정해서 원하는 위치에 문자열 수정가능
