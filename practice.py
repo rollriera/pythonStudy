@@ -177,3 +177,4 @@ url = url.replace("http://","")
 url = url[:url.index(".")]
 url = url[0:3]+str(len(url))+str(url.count("e"))+"!"
 print(url)
+
