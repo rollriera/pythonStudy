@@ -1,6 +1,6 @@
 # 리스트 : 순서를 가지는 객체의 집합 [] Java의 배열
-# Java에서는 배열과 컬랙션 객체인 ArrayList로써의 분배가 있지만 Python에서는 리스트라고 불리며 자바에서의 
-# 배열과는 리스트의 index값이 동적으로 증가함
+# Java에서는 배열과 컬랙션 객체인 ArrayList로써의 분배가 있지만 Python에서는 리스트라고 불린다.
+# 리스트는 index값이 동적으로 증가함
 
 # 지하철 칸별로 10명, 20명, 30명 ~
 subway = [10,20,30]
@@ -14,10 +14,10 @@ print(subway[0])
 print(subway[1])
 print(subway[2])
 
-# index 메서드를 이용해서 내가 원하는 값의 index값을 출력할 수도 있음
+# index 메서드를 이용해서 내가 원하는 값의 index위치의 데이터를 출력할 수도 있음
 print(subway.index(20))
 
-#append 메서드를 이용해서 데이터 추가도 가능함 append함수를 사용하면 항상 맨 뒤에 등록되게됨
+#append 메서드를 이용해서 데이터 추가도 가능함 append메서드를 사용하면 항상 맨 뒤에 등록되게됨
 subway.append(40)
 print (subway)
 
@@ -130,7 +130,7 @@ menu = ("돈까스" , "치즈까스")
 print(menu[0])
 print(menu[1])
 
-# menu.add("생선까스") 추가 불가능 Exception 출력
+#menu.add("생선까스") 추가 불가능 Exception 출력
 
 # name = "홍길동"
 # age = 20
@@ -164,15 +164,12 @@ java = {"홍길동", "둘리", "나나"}
 python = set(["보라돌이", "뚜비", "홍길동"])
 
 # 교집합 (java 와ㅏ python을 모두 할 수 있는 개발자)
-print(java & python)
 print(java.intersection(python)) # 교집합을 반환하는 메서드
 
 # 합집합 (java나 python을 할 수 있는 개발자)
-print(java | python)
 print(java.union(python)) # 합집합을 반환하는 메서드
 
 # 차집합 (java는 할 수 있지만 python은 할 줄 모르는 개발자)
-print(java - python)
 print(java.difference(python)) #차집합을 반환하는 메서드
 
 python.add("짱구") # 값을 추가도 가능
@@ -218,35 +215,35 @@ shuffle(user) #무작위로 섞는 메소드
 print(user)
 
 # sample를 통해 내가 무작위로 추출할 list, set 자료형을 명시하고 몇개의 요소를 추출 할지 기입 한다
-chhiken = sample(user, 1)
+chicken = sample(user, 1)
 coffe = sample(user, 3)
-print(f"-- 당첨자 발표 --\n치킨 당첨자 : {chhiken} \n커피 당첨자 : {coffe} \n -- 축하합니다 --")
+print(f"-- 당첨자 발표 --\n치킨 당첨자 : {chicken} \n커피 당첨자 : {coffe} \n -- 축하합니다 --")
 
 # if 조건문
 # if 조건식 : True 일때의 실행 로직
-if ("홍길동" == "홍길동") : print("실행됨")
+# if ("홍길동" == "홍길동") : print("실행됨")
 
-weather = input("오늘 날씨는 어때요? ")
-if weather == "비" or weather == "눈": print("우산챙기세요.") # 초기 조건
-elif weather == "미세먼지" : print("마스크를 챙기세요") #else if 2번째 조건
-else: print("준비물이 필요없어요") #위조건들이 전부 False일때 실행되는 조건
+# weather = input("오늘 날씨는 어때요? ")
+# if weather == "비" or weather == "눈": print("우산챙기세요.") # 초기 조건
+# elif weather == "미세먼지" : print("마스크를 챙기세요") #else if 2번째 조건
+# else: print("준비물이 필요없어요") #위조건들이 전부 False일때 실행되는 조건
 
-temp = int(input("기온은 어때요?"))
-if temp == 30 : print("너무 더워요 나가지 마세요")
-elif 10 <=  temp < 30 : print("괜찮은 날씨에요") # and 문을 작성하지 않아도 비교 가능
-elif 0 <= temp  < 10 : print("외투를 챙기세요")
-else : print("너무 추워요. 나가지 마세요")
+# temp = int(input("기온은 어때요?"))
+# if temp == 30 : print("너무 더워요 나가지 마세요")
+# elif 10 <=  temp < 30 : print("괜찮은 날씨에요") # and 문을 작성하지 않아도 비교 가능
+# elif 0 <= temp  < 10 : print("외투를 챙기세요")
+# else : print("너무 추워요. 나가지 마세요")
 
-# for문
-# for 변수 in 반복할 값 : 반복 수행할 로직
-for i in range(5) :
-    if i != 1 : print(f"대기번호 : {i}")
+# # for문
+# # for 변수 in 반복할 값 : 반복 수행할 로직
+# for i in range(5) :
+#     if i != 1 : print(f"대기번호 : {i}")
 
-# while 문
-i = "홍길동"
-person = "Unknown"
-while person != i :
-    print(f"{i}님, 커피가 준비 되었습니다.")
-    person = input("이름이 어떻게 되세요? ")
-
+# # while 문
+# i = "홍길동"
+# person = "Unknown"
+# while person != i :
+#     print(f"{i}님, 커피가 준비 되었습니다.")
+#     person = input("이름이 어떻게 되세요? ")
+#다양한 자료형 함께 사용 가능
 
