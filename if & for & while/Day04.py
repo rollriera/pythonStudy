@@ -1,6 +1,5 @@
 # 함수
 # Java에서의 메서드 정의와 비슷한 역할을 함 def키워드를 통해서 함수가 정의됨
-#
 
 #함수 생성
 def open_account():
@@ -120,17 +119,17 @@ print (f"전체 총 : {gun}")
 # (출력 예제)
 # 키 175cm 남자의 표준 체중은 67.38kg 입니다.#
 
-def std_weigth(height, gender) : #함수 선언 전달값은 키, 성별
-    weight = 0 # return할 변수
-    if gender == "남자" : #만약 성별이 남자일 경우 다음 로직 실행
-        # cm를 m으로 변환 후 실수로 변환하여 계산
-        weight = round(float(int(height) / 100) * float(int(height) / 100) * 22 , 2)
-    elif gender == "여자" : # 만약 성별이 여자일 경우 다음 로직 실행
-         # cm를 m으로 변환 후 실수로 변환하여 계산
-         weight = round(float(int(height) / 100) * float(int(height) / 100) * 21 , 2)
-    return height,gender,weight
+# def std_weigth(height, gender) : #함수 선언 전달값은 키, 성별
+#     weight = 0 # return할 변수
+#     if gender == "남자" : #만약 성별이 남자일 경우 다음 로직 실행
+#         # cm를 m으로 변환 후 실수로 변환하여 계산
+#         weight = round(float(int(height) / 100) * float(int(height) / 100) * 22 , 2)
+#     elif gender == "여자" : # 만약 성별이 여자일 경우 다음 로직 실행
+#          # cm를 m으로 변환 후 실수로 변환하여 계산
+#          weight = round(float(int(height) / 100) * float(int(height) / 100) * 21 , 2)
+#     return height,gender,weight
 
-gender = input("성별이 어떻게 되시나요?")
-height = input("키는 어떻게 되시나요?")
-height,gender,weight = std_weigth(height,gender)
-print(f"키{height}cm {gender}의 표준 체중은 {weight}kg 입니다.")
+# gender = input("성별이 어떻게 되시나요?")
+# height = input("키는 어떻게 되시나요?")
+# height,gender,weight = std_weigth(height,gender)
+# print(f"키{height}cm {gender}의 표준 체중은 {weight}kg 입니다.")
