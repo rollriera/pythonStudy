@@ -1,17 +1,17 @@
 # if 조건문
 # if 조건식 : True 일때의 실행 로직
-if ("홍길동" == "홍길동") : print("실행됨")
+# if True : print("실행됨")
 
-weather = input("오늘 날씨는 어때요? ")
-if weather == "비" or weather == "눈": print("우산챙기세요.") # 초기 조건
-elif weather == "미세먼지" : print("마스크를 챙기세요") #else if 2번째 조건
-else: print("준비물이 필요없어요") #위조건들이 전부 False일때 실행되는 조건
+# weather = input("오늘 날씨는 어때요? ")
+# if weather == "비" or weather == "눈": print("우산챙기세요.") # 초기 조건
+# elif weather == "미세먼지" : print("마스크를 챙기세요") #else if 2번째 조건
+# else: print("준비물이 필요없어요") #위조건들이 전부 False일때 실행되는 조건
 
-temp = int(input("기온은 어때요?"))
-if temp == 30 : print("너무 더워요 나가지 마세요")
-elif 10 <=  temp < 30 : print("괜찮은 날씨에요") # and 문을 작성하지 않아도 비교 가능
-elif 0 <= temp  < 10 : print("외투를 챙기세요")
-else : print("너무 추워요. 나가지 마세요")
+# temp = int(input("기온은 어때요?"))
+# if temp == 30 : print("너무 더워요 나가지 마세요")
+# elif 10 <=  temp < 30 : print("괜찮은 날씨에요") # and 문을 작성하지 않아도 비교 가능
+# elif 0 <= temp  < 10 : print("외투를 챙기세요")
+# else : print("너무 추워요. 나가지 마세요")
 
 # for문
 # for 변수 in 반복할 값 : 반복 수행할 로직
@@ -19,8 +19,8 @@ for i in range(5) :
     if i != 1 : print(f"대기번호 : {i}")
 
 # 한줄 for문 활용(리스트 컴프리헨션)
-# 출석번호 1 2 3 4 앞에 100을 붙이기로함 -> 101, 102, 103, 104
-students = [1,2,3,4,5]
+# 출석번호 1 3 5 7 4 앞에 100을 붙이기로함 -> 101, 103, 105, 107, 104
+students = [1,3,5,7,4]
 print(students)
 students = [i+100 for i in students] # i+100 을 해주고 리스트의 길이만큼 for문을 반복
 print(students)
@@ -38,13 +38,18 @@ print(students)
 # while 문
 # 조건이 True일 때 특정 블록을 반복적으로 실행하는 루프를 생성
 # 단, 무조건 True조건일 경우 무한루프됨
+count = 1
+while count < 5 :
+    print(count)
+    count += 1
+
 i = "홍길동"
 person = "Unknown"
 while person != i :
     print(f"{i}님, 커피가 준비 되었습니다.")
     person = input("이름이 어떻게 되세요? ")
 
-# continew break
+# continue & break
 absent = [2, 5] # 출석 번호 2번 5번 결석
 no_book = [7] #책을 안가져왔음
 for student in range(1, 11) : # 1,2,3,4,5,6,7,8,9,10
