@@ -207,7 +207,6 @@ print(type(menu))
 # 치킨 당첨자 : 1
 # 커피 당첨자 : [2, 3, 4]
 # -- 축하합니다 --#
-
 from random import * #random 모듈을 import
 user = range(1, 21) # 1부터 20 까지 숫자를 생성
 user = list(user)
