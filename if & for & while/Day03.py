@@ -19,6 +19,8 @@ for i in range(5) :
     if i != 1 : print(f"대기번호 : {i}")
 
 # while 문
+# 조건이 True일 때 특정 블록을 반복적으로 실행하는 루프를 생성
+# 단, 무조건 True조건일 경우 무한루프됨
 i = "홍길동"
 person = "Unknown"
 while person != i :
@@ -30,7 +32,7 @@ absent = [2, 5] # 출석 번호 2번 5번 결석
 no_book = [7] #책을 안가져왔음
 for student in range(1, 11) : # 1,2,3,4,5,6,7,8,9,10
     if student in absent :
-        continue # 위 조건에 부합한다면, 다시 for문 재실행
+        continue # 위 조건에 부합한다면, 건너뛰기
     elif student in no_book : 
         print(f"오늘 수업 여기까지. {student}번은 교무실로 따라와.") 
         break # 종료
