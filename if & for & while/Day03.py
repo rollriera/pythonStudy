@@ -18,6 +18,23 @@ else : print("너무 추워요. 나가지 마세요")
 for i in range(5) :
     if i != 1 : print(f"대기번호 : {i}")
 
+# 한줄 for문 활용(리스트 컴프리헨션)
+# 출석번호 1 2 3 4 앞에 100을 붙이기로함 -> 101, 102, 103, 104
+students = [1,2,3,4,5]
+print(students)
+students = [i+100 for i in students] # i+100 을 해주고 리스트의 길이만큼 for문을 반복
+print(students)
+
+# 학생 이름을 길이로 변환
+students = ["홍길동", "둘리", "또치"]
+students = [len(i) for i in students]
+print(students)
+
+# 학생 이름을 대문자로 변환
+students = ["hong", "dool", "ddoch"]
+students = [i.upper() for i in students]
+print(students)
+
 # while 문
 # 조건이 True일 때 특정 블록을 반복적으로 실행하는 루프를 생성
 # 단, 무조건 True조건일 경우 무한루프됨
@@ -37,23 +54,6 @@ for student in range(1, 11) : # 1,2,3,4,5,6,7,8,9,10
         print(f"오늘 수업 여기까지. {student}번은 교무실로 따라와.") 
         break # 종료
     print(f"{student}번, 책을 읽어봐")
-
-# 한줄 for문 활용(리스트 컴프리헨션)
-# 출석번호 1 2 3 4 앞에 100을 붙이기로함 -> 101, 102, 103, 104
-students = [1,2,3,4,5]
-print(students)
-students = [i+100 for i in students] # i+100 을 해주고 리스트의 길이만큼 for문을 반복
-print(students)
-
-# 학생 이름을 길이로 변환
-students = ["홍길동", "둘리", "또치"]
-students = [len(i) for i in students]
-print(students)
-
-# 학생 이름을 대문자로 변환
-students = ["hong", "dool", "ddoch"]
-students = [i.upper() for i in students]
-print(students)
 
 # 실습
  #당신은 Cocoa 서비스를 이용하는 택시 기사님입니다.
