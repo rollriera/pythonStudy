@@ -13,10 +13,19 @@ def open_account() :
     print("새로 다시 정의된 함수로 변경")        
 open_account()
 
+i = 10
+def temp(num) :
+   num = num + 100
+   num += 100
+temp(i)
+print(i)
+
 # 전달값과 반환값
+balance = 0 # 잔액
 def deposit(balance, money) : # 입금
     print(f"입금이 완료되었습니다. 잔액은 {balance+money} 원입니다.")
     return balance + money
+balance = deposit(balance, 1000)
 
 def witdraw(balance, money) :
     result = 0 # 반환 변수
@@ -27,11 +36,12 @@ def witdraw(balance, money) :
         print (f"출금이 완료되지 않았습니다. 잔액은 {balance}원 입니다.")
         result = balance
     return result
+result = witdraw(balance, 500)
+print("witdraw함수에서 반환받은 값 : ",result)
+
 def withdraw_night(balance, money) : #저녁에 출금
     commission = 100 #수수료 100원
     return commission, balance - money - commission    
-balance = 0 # 잔액
-balance = deposit(balance, 1000)
 # balance = witdraw(balance, 500)
 commission, balance = withdraw_night(balance, 500)
 print(f"수수료는{commission}원 이며, 잔액은{balance}원 입니다.")
@@ -61,10 +71,14 @@ profile(name ="홍길동", main_lang= "Python", age = 20)
 profile(age = 20, main_lang="Java", name= "길동이")
 
 # 가변 인자
-
-# def profile(name, age, lang1, lang2, lang3, lang4, lang5) :
-#     print(f"이름 : {name}\n나이 : {age}")
-#     print(lang1,lang2,lang3,lang4,lang5)
+def profile(name, age, *lang) :
+    print(f"이름 : {name}\n나이 : {age}")
+    for language in lang :
+        if language == "C#" :
+            print(language,end="")
+        else : print(language,end = ",")   
+    print()    
+profile("홍길동",20,"Python", "Java", "C", "C++", "C#")
 
 # *인자는 여러 자료형을 담을 수 있다
 def profile(name, age, *language) :
@@ -72,8 +86,8 @@ def profile(name, age, *language) :
     for lang in language :
         print(lang, end = " ")
     print()
-skile = ["Python", "Java", "C", "C++", "C#" , "JavaScript"]    
-profile("홍길동", 20, skile,"여러가지","가능")
+skills = ["Python", "Java", "C", "C++", "C#" , "JavaScript"]    
+profile("홍길동", 20, skills, "여러가지","가능")
 
 # **인자(가변 키워드 인자)는 딕셔너리형태로 담을 수 있다.
 def profile(name, age, **language) :
@@ -91,6 +105,8 @@ def checkpoint(soldiers) : #경계근무
     global gun # global키워드를 사용해서 외부에 있는 gun변수 사용
     gun = gun - soldiers
     print(f"[함수  내] 남은 총 : {gun}")
+checkpoint(2)
+print(gun)
 
 # 지역 변수의 값을 return 을 활용해 수정할 수 있음
 def checkpoint_ret(gun, soldiers) :
@@ -119,17 +135,17 @@ print (f"전체 총 : {gun}")
 # (출력 예제)
 # 키 175cm 남자의 표준 체중은 67.38kg 입니다.#
 
-# def std_weigth(height, gender) : #함수 선언 전달값은 키, 성별
-#     weight = 0 # return할 변수
-#     if gender == "남자" : #만약 성별이 남자일 경우 다음 로직 실행
-#         # cm를 m으로 변환 후 실수로 변환하여 계산
-#         weight = round(float(int(height) / 100) * float(int(height) / 100) * 22 , 2)
-#     elif gender == "여자" : # 만약 성별이 여자일 경우 다음 로직 실행
-#          # cm를 m으로 변환 후 실수로 변환하여 계산
-#          weight = round(float(int(height) / 100) * float(int(height) / 100) * 21 , 2)
-#     return height,gender,weight
+def std_weigth(height, gender) : #함수 선언 전달값은 키, 성별
+    weight = 0 # return할 변수
+    if gender == "남자" : #만약 성별이 남자일 경우 다음 로직 실행
+        # cm를 m으로 변환 후 실수로 변환하여 계산
+        weight = round(float(int(height) / 100) * float(int(height) / 100) * 22 , 2)
+    elif gender == "여자" : # 만약 성별이 여자일 경우 다음 로직 실행
+         # cm를 m으로 변환 후 실수로 변환하여 계산
+         weight = round(float(int(height) / 100) * float(int(height) / 100) * 21 , 2)
+    return height,gender,weight
 
-# gender = input("성별이 어떻게 되시나요?")
-# height = input("키는 어떻게 되시나요?")
-# height,gender,weight = std_weigth(height,gender)
-# print(f"키{height}cm {gender}의 표준 체중은 {weight}kg 입니다.")
+gender = input("성별이 어떻게 되시나요?")
+height = input("키는 어떻게 되시나요?")
+height,gender,weight = std_weigth(height,gender)
+print(f"키{height}cm {gender}의 표준 체중은 {weight}kg 입니다.")
