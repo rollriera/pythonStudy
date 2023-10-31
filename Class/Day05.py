@@ -14,8 +14,8 @@ class Animal :
     def speak(self) :
         print(f"안녕 나는 {self.name} 이라고해! 나이는 {self.age}살이야!")
 
-# 클래스 호출
-# 호출과 동시에 __init__ 실행됨
+# 클래스 생성
+# 생성과 동시에 __init__ (생성자)이 실행 되면서 맴버변수 초기화.
 dog = Animal("뚱이", 2)
 
 # 해당 클래스의 temp메서드 호출
@@ -35,23 +35,23 @@ class Dog(Animal) :
         #super().__init__(self)
         Animal.__init__(self, name, age)
 
-    def speak(self) :
-         print(f"안녕 나는{self.name}이고, 나이는{self.age}야!")
-         print("그리고 나는 강아지야!")    
+    # def speak(self) :
+    #      print(f"안녕 나는{self.name}이고, 나이는{self.age}야!")
+    #      print("그리고 나는 강아지야!")    
 
 animals = Dog("뚱이" ,2)
 animals.speak()               
 
 # 다중 상속
 class test1() :
-    def __init__(self):
+    def __init__():
         print("test1의 생성자 호출")
 
     def show1(self) :
         print("test1의 메서드")
 
 class test2() :
-    def __init__(self) :
+    def __init__() :
         print("test2의 생성자 호출")              
     
     def show2(self) :
@@ -59,12 +59,13 @@ class test2() :
 
 class test3(test1,test2) :
     def __init__(self):
-        test1.__init__(self)        
-        test2.__init__(self)
+        test1.__init__()        
+        test2.__init__()
 
     def show3(self) :
         self.show1()
         self.show2()
+        print("상속받은 클래스의 메서드가 전부 실행된뒤에 출력될 문장")
 
 i = test3()
 i.show3()    
@@ -77,15 +78,17 @@ class overLoading() :
     def show(self) :
         print("부모클래스의 show메서드")
 
-class overloading2(overLoading) :
+class overLoading2(overLoading) :
     def __init__(self):
         super().__init__()
 
     def show(self) :
         print("자식 클래스의 show메서드")
 
-i = overloading2()
-i.show()                
+test = overLoading()
+test.show()
+test = overLoading2()
+test.show()                
 
 
 #실습
