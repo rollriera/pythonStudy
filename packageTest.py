@@ -1,24 +1,28 @@
 # import 할때
 # 패키지.파일 부분에 파일만 들어올 수 있다.
 # 클래스를 호출하고 싶다면 from ~ import문 사용
-# import travel.thailand
-# trip_to = travel.thailand.ThailandPackage()
-# trip_to.detail()
 
-# from travel.thailand import ThailandPackage 
-# trip_to = ThailandPackage()
-# trip_to.detail()
+import travel.thailand
+trip_to = travel.thailand.test()
 
-# from travel import vietnam
-# trip_to = vietnam.VietnamPackage()
-# trip_to.detail()
+import travel.thailand
+trip_to = travel.thailand.ThailandPackage()
+trip_to.detail()
+
+from travel.thailand import ThailandPackage 
+trip_to = ThailandPackage()
+trip_to.detail()
+
+from travel import vietnam
+trip_to = vietnam.VietnamPackage()
+trip_to.detail()
 
 # __all__
 #패키지 생성 및 사용
 from travel import *
-# # trip_to = vietnam.VietnamPackage()
-# trip_to = thailand.ThailandPackage()
-# trip_to.detail()
+trip_to = vietnam.VietnamPackage()
+trip_to = thailand.ThailandPackage()
+trip_to.detail()
 
 # 패키지, 모듈 위치
 import inspect # 파일의 경로를 출력해주는 메서드를 가진 모듈
@@ -83,8 +87,8 @@ today = datetime.date.today() # 오늘 날짜 저장
 td = datetime.timedelta(days=100) # 100일 저장
 print("우리가 만난지 100일은", today + td)
 
-# 실습
-#프로젝트 내에 나만의 시그니처를 남기는 모듈을 만드시오
-# 조건 : 모듈 파일명은 byme.py 로 작성#
+# # 실습
+# #프로젝트 내에 나만의 시그니처를 남기는 모듈을 만드시오
+# # 조건 : 모듈 파일명은 byme.py 로 작성#
 import module
 module.sign()
